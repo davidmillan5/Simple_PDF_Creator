@@ -9,6 +9,8 @@ df = pd.read_csv("topics.csv")
 
 for index, row in df.iterrows():
     pdf.add_page()
+
+    #Set Header
     pdf.set_font(
     family="Times",
     style="B",
@@ -26,12 +28,15 @@ for index, row in df.iterrows():
     new_y=YPos.NEXT,
     align='L',
     )
+    for y in range(20, 298, 10):
+        pdf.line(10, y, 200, y)
     pdf.line(
         10,
         21,
         200,
         21
     )
+
     # Set the footer
     pdf.ln(265)
     pdf.set_font(
@@ -69,6 +74,8 @@ for index, row in df.iterrows():
             text=row["Topic"],
             align='R',
         )
+        for y in range(20, 298, 10):
+            pdf.line(10, y, 200, y)
 
 
-pdf.output("output.pdf")
+pdf.output("output_lined.pdf")
