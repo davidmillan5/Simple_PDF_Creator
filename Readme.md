@@ -5,3 +5,8 @@
 ``````command
 pip install fpdf2
 ``````
+
+- [pandas](https://pandas.pydata.org/docs/)
+``````command
+pip install pandas
+``````
